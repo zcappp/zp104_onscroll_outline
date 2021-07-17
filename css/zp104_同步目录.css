@@ -1,0 +1,68 @@
+module.exports=` .zp104 {
+    position: relative;
+    max-width: 250px;
+    border-left: 1px solid rgb(235, 237, 240);
+    transition: right 0.3s ease 0s;
+    white-space: nowrap;
+}
+
+.zp104 .ink {
+    position: absolute;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(47, 84, 235);
+    border-radius: 8px;
+    transform: translateX(-50%);
+    transition: top 0.3s ease-in-out 0s;
+}
+
+.zp104 li {
+    color: rgb(49, 70, 89);
+    cursor: pointer;
+    transition: all 100ms ease-in-out 0s;
+}
+
+.zp104 .cur {
+    color: rgb(47, 84, 235);
+    /*font-weight: 500;*/
+}
+
+.zp104 .h1 {
+    font-weight: bold;
+}
+
+.zp104 .h1 {
+    padding: 5px 0px 7px 10px;
+}
+
+.zp104 .h2 {
+    padding: 5px 0px 7px 20px;
+}
+
+.zp104 .h3 {
+    padding: 5px 0px 7px 30px;
+}
+
+.zp104 .h4 {
+    padding: 5px 0px 7px 40px;
+}
+
+.zp104 .h5 {
+    padding: 5px 0px 7px 50px;
+}
+
+.zp104 .h6 {
+    padding: 5px 0px 7px 60px;
+}
+
+.zp104 ol {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: small;
+    overflow: hidden;
+}
+
+`
