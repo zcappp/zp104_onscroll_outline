@@ -13,9 +13,8 @@ function render(ref) {
 
 function onInit(ref) {
     const { props, id } = ref
-    if (!props.article) return ref.exc('warn("需要传入文章容器类名")')
-    ref.article = $("." + props.article)
-    if (!ref.article) return ref.exc('warn("根据类名未找到文章")')
+    ref.article = $("." + (props.article || "zarticle"))
+    if (!ref.article) return ref.exc('warn("未找到文章")')
     ref.offset = props.offset || 0
     ref.io = new IntersectionObserver(entries => entries.forEach(x => {
         if (x.boundingClientRect.y > 200 || x.boundingClientRect.y < -200) return
@@ -54,7 +53,7 @@ function onDestroy(ref) {
     ref.io && ref.io.disconnect()
 }
 
-function loop(ref, e, offset) {
+function loop(ref, e) {
     if (e.children) Array.from(e.children).forEach(a => {
         if (HH.includes(a.nodeName)) {
             ref.H.push(a)
@@ -65,7 +64,7 @@ function loop(ref, e, offset) {
 }
 
 function click(ref, li) {
-    const arr = Array.from(document.querySelectorAll("." + ref.props.article + " " + li.classList[0]))
+    const arr = Array.from(ref.article.querySelectorAll(li.classList[0]))
     const H = arr.find(a => a.textContent === li.textContent)
     if (!H) return
     window.scrollTo(0, ref.exc("offsetTop(H)", { H }) - ref.offset)
