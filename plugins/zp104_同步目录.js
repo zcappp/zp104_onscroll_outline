@@ -11,7 +11,7 @@ function render(ref) {
     )}</ol></React.Fragment>
 }
 
-function onInit(ref) {
+function init(ref) {
     const { props, id } = ref
     ref.article = $("." + (props.article || "zarticle"))
     if (!ref.article) return ref.exc('warn("未找到文章")')
@@ -49,7 +49,7 @@ function observe(ref) {
     }, 200)
 }
 
-function onDestroy(ref) {
+function destroy(ref) {
     ref.io && ref.io.disconnect()
 }
 
@@ -88,7 +88,7 @@ $plugin({
         label: "偏移量(px)"
     }],
     render,
-    onInit,
-    onDestroy,
+    init,
+    destroy,
     css
 })
