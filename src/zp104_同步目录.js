@@ -1,5 +1,5 @@
 import React from "react"
-import css from "../css/zp104_同步目录.css"
+import css from "./zp104_同步目录.css"
 
 const HH = ["H1", "H2", "H3", "H4", "H5", "H6"]
 

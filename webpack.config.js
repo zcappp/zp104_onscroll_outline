@@ -5,7 +5,7 @@ module.exports = {
     mode: process.env.mode || "development",
     devtool: false,
     entry: {
-        "zp104": "./plugins/zp104_同步目录.js",
+        "zp104": "./src/zp104_同步目录.js",
     },
     output: {
         path: path.join(__dirname, "build/"),
