@@ -14,7 +14,7 @@ function render(ref) {
 function init(ref) {
     const { props, id } = ref
     ref.article = $("." + (props.article || "zarticle"))
-    if (!ref.article) return ref.exc('warn("未找到文章")')
+    if (!ref.article) return ref.isDev ? ref.exc('warn("未找到文章")') : ""
     ref.offset = props.offset || 0
     ref.io = new IntersectionObserver(entries => entries.forEach(x => {
         if (x.boundingClientRect.y > 200 || x.boundingClientRect.y < -200) return
